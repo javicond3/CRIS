@@ -90,5 +90,10 @@ You have permission to modify this page
 			<input type="hidden" name="id" value="${researcher.id}"></input>
 			<button type="submit">Send CV to email</button>
 		</form>
+		</form>
+		<form action="UpdatePublicationsQueueServlet" method="get">
+			<input type="hidden" name="id" value="${researcher.id}"></input>
+			<button type="submit">Nevas publicaciones</button>
+		</form>
 </body>
 </html>

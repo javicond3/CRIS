@@ -55,7 +55,10 @@ You have permission to modify this page
 			</p>
 			<button type="submit">Update</button>
 		</form>
-		
+		<form action="UpdateCitationsApiServlet" method="get">
+			<input type="hidden" name="id" value="${publication.id}" />
+			<button type="submit">Update citations</button>
+		</form>
 	</c:if>
 </body>
 </html>

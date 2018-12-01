@@ -3,10 +3,10 @@ package es.upm.dit.apsv.webLab.cris.model;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+
+
 
 @Entity
 public class Publication implements Serializable{
@@ -15,7 +15,7 @@ public class Publication implements Serializable{
 	private String title;
 	private String publicationName;
 	private String publicationDate;
-	@ElementCollection(fetch=FetchType.EAGER)
+
 	private List<String> authors;
 	private String eid;
 	private int citeCount;

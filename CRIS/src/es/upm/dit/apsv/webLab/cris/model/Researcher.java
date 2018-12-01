@@ -4,10 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
+
+
 
 @Entity
 public class Researcher implements Serializable{
@@ -16,11 +17,11 @@ public class Researcher implements Serializable{
 	private String id;
 	private String name;
 	private String lastName;
+	@Index
 	private String email;
 	private String password;
 	private String scopusUrl;
 	private String eid;
-	@ElementCollection(fetch=FetchType.EAGER)
 	private List<String> publications;
 	
 	public Researcher() {

@@ -86,5 +86,9 @@ You have permission to modify this page
 			<input type="hidden" name="id" value="${researcher.id}"></input>
 			<button type="submit">Generate CV</button>
 		</form>
+		<form action="GenerateCVMailServlet" method="get">
+			<input type="hidden" name="id" value="${researcher.id}"></input>
+			<button type="submit">Send CV to email</button>
+		</form>
 </body>
 </html>

@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import es.upm.dit.apsv.webLab.cris.dao.ResearcherDAOImplementation;
 import es.upm.dit.apsv.webLab.cris.model.Researcher;
 
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -28,7 +32,13 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		Researcher researcher = ResearcherDAOImplementation.getInstance().readAsUser(email, password);
+		UserService userService = UserServiceFactory.getUserService();
+		Researcher researcher = null;
+		        if(null != req.getUserPrincipal()) {
+		            researcher = ResearcherDAOImplementation.getInstance()
+		                    .readAsUser(userService.getCurrentUser().getEmail(),null);
+		        }
+
 		if (ADMIN.equals(email) && ADMIN.equals(password)) { // El usuario y la contraseña son root
 			Researcher root = new Researcher();
 			root.setId("root");

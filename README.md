@@ -1,7 +1,7 @@
 # CRIS
 Java tomcat server with CRIS 
 
-#Despliegue en google cloud commit 2
+## Despliegue en google cloud commit 2
 
 Para ejecutarlo:
 
@@ -21,7 +21,7 @@ Ya no hace falta iniciar hibernate.
 Atento en los sitios que hay que meter el gae_project_id (ID de la app de google)
 Envío de corroes a hola@idAPP.appsportalmail.com solo funciona cuando está en la nube
 
-#Sistema de colas y conexión API scopus
+## Sistema de colas y conexión API scopus
 
 Para scopus tienes que hacerlo en localhost no desde la nube y con la vpn y la cuenta de scopus debe ser @alumnos.upm.es
 
